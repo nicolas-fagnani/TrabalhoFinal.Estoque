@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace WinFormsApp1
+namespace Estoque.Repository.Context
 {
     internal class ApplicationDbContext : DbContext
     {
