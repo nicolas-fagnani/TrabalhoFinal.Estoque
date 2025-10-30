@@ -8,7 +8,9 @@ namespace Estoque.Repository.Repository
     {
         public User GetByMail(string mail)
         {
-            var user = context.User
+            var user = context.Users.FirstOrDefault(c => c.Mail == mail);
+
+            return user;
         }
     }
 }
