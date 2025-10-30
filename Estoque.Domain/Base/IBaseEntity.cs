@@ -1,6 +1,6 @@
 ﻿namespace Estoque.Domain.Base
 {
-    internal interface IBaseEntity
+    public interface IBaseEntity
     {
 
     }

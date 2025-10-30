@@ -1,8 +1,8 @@
 namespace WinFormsApp1
 {
-    public partial class FormPrincipal : Form
+    public partial class FormLogin : Form
     {
-        public FormPrincipal()
+        public FormLogin()
         {
             InitializeComponent();
         }

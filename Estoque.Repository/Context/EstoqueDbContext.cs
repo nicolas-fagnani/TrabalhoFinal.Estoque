@@ -1,10 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Estoque.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Estoque.Repository.Context
 {
-    internal class ApplicationDbContext : DbContext
+    public class EstoqueDbContext : DbContext
     {
-        public ApplicationDbContext()
+        // Atribustos //
+        public DbSet<User> Users { get; set; }
+
+        // Métodos //
+        public EstoqueDbContext()
         {
             
         }
