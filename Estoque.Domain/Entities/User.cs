@@ -6,7 +6,7 @@ namespace Estoque.Domain.Entities
     {
         // Atributos //
         public string Name { get; set; }
-        public string Mail { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
 
         // Métodos //
@@ -15,10 +15,10 @@ namespace Estoque.Domain.Entities
 
         }
 
-        public User(int id, string name, string mail, string password)
+        public User(int id, string name, string email, string password)
         {
             Name = name;
-            Mail = mail;
+            Email = email;
             Password = password;
         }
 
