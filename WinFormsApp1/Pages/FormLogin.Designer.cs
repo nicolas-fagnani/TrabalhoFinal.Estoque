@@ -34,6 +34,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
             btnLogin = new Guna.UI2.WinForms.Guna2Button();
@@ -43,6 +46,8 @@
             lblForgotPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblCreateAccount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSingUp = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tbEmail
@@ -62,14 +67,14 @@
             tbEmail.ForeColor = Color.Black;
             tbEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbEmail.IconLeft = Estoque.Forms.Properties.Resources.image01_MailIcon;
-            tbEmail.Location = new Point(520, 94);
+            tbEmail.Location = new Point(365, 98);
             tbEmail.Margin = new Padding(5, 6, 5, 6);
             tbEmail.Name = "tbEmail";
             tbEmail.PlaceholderForeColor = Color.Silver;
             tbEmail.PlaceholderText = "@mail.com";
             tbEmail.SelectedText = "";
             tbEmail.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tbEmail.Size = new Size(200, 36);
+            tbEmail.Size = new Size(211, 39);
             tbEmail.TabIndex = 0;
             // 
             // tbPassword
@@ -88,14 +93,14 @@
             tbPassword.ForeColor = Color.Black;
             tbPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbPassword.IconLeft = Estoque.Forms.Properties.Resources.image02_PasswordIcon;
-            tbPassword.Location = new Point(520, 159);
+            tbPassword.Location = new Point(365, 163);
             tbPassword.Margin = new Padding(4);
             tbPassword.Name = "tbPassword";
             tbPassword.PlaceholderForeColor = Color.Silver;
             tbPassword.PlaceholderText = "password";
             tbPassword.SelectedText = "";
             tbPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tbPassword.Size = new Size(200, 36);
+            tbPassword.Size = new Size(211, 39);
             tbPassword.TabIndex = 1;
             tbPassword.UseSystemPasswordChar = true;
             // 
@@ -110,19 +115,18 @@
             btnLogin.FillColor = Color.Black;
             btnLogin.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(520, 225);
+            btnLogin.Location = new Point(365, 229);
             btnLogin.Name = "btnLogin";
             btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLogin.Size = new Size(200, 36);
+            btnLogin.Size = new Size(211, 39);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "LOGIN";
-            btnLogin.Click += btnLogin_Click;
+            btnLogin.Text = "LOGIN";           
             // 
             // lblUsername
             // 
             lblUsername.BackColor = Color.Transparent;
             lblUsername.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(520, 75);
+            lblUsername.Location = new Point(365, 79);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(60, 17);
             lblUsername.TabIndex = 3;
@@ -132,7 +136,7 @@
             // 
             lblPassword.BackColor = Color.Transparent;
             lblPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(520, 139);
+            lblPassword.Location = new Point(365, 143);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(55, 17);
             lblPassword.TabIndex = 4;
@@ -142,7 +146,7 @@
             // 
             lblLogin.BackColor = Color.Transparent;
             lblLogin.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.Location = new Point(533, 27);
+            lblLogin.Location = new Point(378, 31);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(172, 42);
             lblLogin.TabIndex = 5;
@@ -153,7 +157,7 @@
             lblForgotPassword.BackColor = Color.Transparent;
             lblForgotPassword.Font = new Font("Segoe UI", 9F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             lblForgotPassword.ForeColor = Color.Gray;
-            lblForgotPassword.Location = new Point(520, 202);
+            lblForgotPassword.Location = new Point(365, 206);
             lblForgotPassword.Name = "lblForgotPassword";
             lblForgotPassword.Size = new Size(120, 17);
             lblForgotPassword.TabIndex = 6;
@@ -163,7 +167,7 @@
             // 
             lblCreateAccount.BackColor = Color.Transparent;
             lblCreateAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCreateAccount.Location = new Point(520, 267);
+            lblCreateAccount.Location = new Point(365, 271);
             lblCreateAccount.Name = "lblCreateAccount";
             lblCreateAccount.Size = new Size(133, 17);
             lblCreateAccount.TabIndex = 7;
@@ -174,18 +178,32 @@
             lblSingUp.BackColor = Color.Transparent;
             lblSingUp.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             lblSingUp.ForeColor = Color.DodgerBlue;
-            lblSingUp.Location = new Point(657, 267);
+            lblSingUp.Location = new Point(502, 271);
             lblSingUp.Name = "lblSingUp";
             lblSingUp.Size = new Size(48, 17);
             lblSingUp.TabIndex = 8;
             lblSingUp.Text = "Sing-Up";
             // 
-            // FormPrincipal
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges7;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(12, 33);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox1.Size = new Size(345, 257);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox1.TabIndex = 9;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(672, 365);
+            Controls.Add(guna2PictureBox1);
             Controls.Add(lblSingUp);
             Controls.Add(lblCreateAccount);
             Controls.Add(lblForgotPassword);
@@ -197,9 +215,10 @@
             Controls.Add(tbEmail);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "FormPrincipal";
+            Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,5 +234,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblForgotPassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCreateAccount;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSingUp;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
