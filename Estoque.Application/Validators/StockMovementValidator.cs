@@ -13,7 +13,7 @@ namespace Estoque.Application.Validators
 
             RuleFor(m => m.Quantity)
                 .GreaterThan(0)
-                .WithMessage("Quantity must be greater than zero.")
+                .WithMessage("Quantity must be greater than zero.");
 
             RuleFor(m => m.Type)
                 .IsInEnum()

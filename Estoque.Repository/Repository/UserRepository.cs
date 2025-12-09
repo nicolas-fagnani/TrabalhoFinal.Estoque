@@ -6,9 +6,9 @@ namespace Estoque.Repository.Repository
 {
     public class UserRepository(EstoqueDbContext context) : BaseRepository<User>(context), IUserRepository
     {
-        public User GetByMail(string mail)
+        public User GetByEmail(string email)
         {
-            var user = context.Users.FirstOrDefault(c => c.Mail == mail);
+            var user = context.Users.FirstOrDefault(c => c.Email == email);
 
             return user;
         }

@@ -4,6 +4,6 @@ namespace Estoque.Domain.Interfaces
 {
     public interface IUserService
     {
-        User GetByMail(string mail, string senha);
+        User GetByEmail(string email, string senha);
     }
 }

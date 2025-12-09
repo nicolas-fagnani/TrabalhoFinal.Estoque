@@ -5,6 +5,6 @@ namespace Estoque.Domain.Interfaces
 {
     public interface IUserRepository : IBaseRepository<User>
     {
-        User GetByMail(string mail);
+        User GetByEmail(string email);
     }
 }

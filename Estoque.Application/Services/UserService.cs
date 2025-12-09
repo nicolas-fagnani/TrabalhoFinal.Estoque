@@ -5,9 +5,9 @@ namespace Estoque.Application.Services
 {
     public class UserService(IUserRepository userRepository) : IUserService
     {
-        public User GetByMail(string email, string password)
+        public User GetByEmail(string email, string password)
         {
-            User user = userRepository.GetByMail(email);
+            User user = userRepository.GetByEmail(email);
             User result;
 
             if (user != null && user.Password == password)
