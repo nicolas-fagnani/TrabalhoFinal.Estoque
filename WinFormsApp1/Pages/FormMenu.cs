@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mysqlx.Cursor;
 
 namespace Estoque.Forms.Pages
 {
@@ -16,6 +17,7 @@ namespace Estoque.Forms.Pages
         {
             InitializeComponent();
         }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
