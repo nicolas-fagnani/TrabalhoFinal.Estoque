@@ -7,8 +7,8 @@ namespace Estoque.Domain.Entities
         // IDs removidos — apenas Navigation Properties
         public Product Product { get; set; }
         public User User { get; set; }
-        public Supplier Supplier { get; set; }
-        public Customer Customer { get; set; }
+        public Supplier? Supplier { get; set; }
+        public Customer? Customer { get; set; }
 
         public decimal Quantity { get; set; }
         public MovementType Type { get; set; }

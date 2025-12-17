@@ -23,6 +23,12 @@ namespace Estoque.Repository.Context
         {
             optionsBuilder.UseMySQL("server=localhost;database=EstoqueNeiaPresentes;user=root;password=963258nF@");
         }
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EstoqueDbContext).Assembly);
+        }
+
     }
 }

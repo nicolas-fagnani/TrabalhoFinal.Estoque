@@ -1,8 +1,8 @@
 ﻿namespace Estoque.Domain.Base;
 
-public interface IBaseRepository<TEntity> where TEntity : IBaseEntity
+public interface IBaseRepository<TEntity> where TEntity : BaseEntity<int>
 {
-    void CleanChageTracker();
+    void CleanChangeTracker();
     void AttachObject(object obj);
     void Insert(TEntity entity);
     void Update(TEntity entity);

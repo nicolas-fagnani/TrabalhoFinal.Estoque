@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Estoque.Domain\Estoque.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
 </Project>

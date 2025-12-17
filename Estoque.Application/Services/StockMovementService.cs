@@ -1,4 +1,5 @@
 ﻿using Estoque.Domain.Entities;
+using Estoque.Domain.Interfaces;
 using FluentValidation;
 
 namespace Estoque.Application.Services
@@ -7,7 +8,7 @@ namespace Estoque.Application.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly IStockMovementRepository _stockMovementRepository;
-        private readonly IValidator<StockMovement> _validator;
+        private readonly StockMovementValidator _validator;
         public StockMovementService(IProductRepository productRepository, IStockMovementRepository stockMovementRepository, IValidator<StockMovement> validator)
         {
             _productRepository = productRepository;
@@ -15,42 +16,42 @@ namespace Estoque.Application.Services
             _validator = validator;
         }
 
-        public async Task<StockMovement> RegisterMovementAsync(StockMovement movement)
+        public void RegisterMovement(StockMovement movement)
         {
-            // Validação FluentValidation //
-            var validationResult = await _validator.ValidateAsync(movement);
-            if(!validationResult.IsValid)
+            var validationResult = _validator.Validate(movement);
+            if (validationResult.IsValid)
             {
-                throw new ValidationException(validationResult.Errors);
+                throw new Exception(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }
 
-            // Carrega o produto //
-            var product = await _productRepository.GetByIdAsync(movement.Product.Id)
-                ?? throw new ArgumentException("Product not found.");
-
-            // Parte Lógica //
-            if(movement.Type == MovementType.Exit)
+            var dbProduct = _productRepository.Select(movement.Product.Id);
+            if (dbProduct == null)
             {
-                if(product.CurrentQuantity < movement.Quantity)
+                throw new Exception("Product not found.");
+            }
+
+            if (movement.Type == MovementType.Exit)
+            {
+                if (dbProduct.CurrentQuantity < movement.Quantity)
                 {
                     throw new InvalidOperationException("Insufficient stock.");
                 }
-                else
-                {
-                    product.CurrentQuantity -= movement.Quantity;
-                }
+                dbProduct.CurrentQuantity -= movement.Quantity;
             }
-            else if(movement.Type == MovementType.Entry)
+            else if (movement.Type == MovementType.Entry)
             {
-                product.CurrentQuantity += movement.Quantity;
+                dbProduct.CurrentQuantity += movement.Quantity;
             }
 
-            await _productRepository.UpdateAsync(product);
-            movement.Product = product;
-            return await _stockMovementRepository.AddAsync(movement);
+            _productRepository.Update(dbProduct);
+            movement.Product = dbProduct;
+            _stockMovementRepository.Insert(movement);
         }
-
-        public Task<IEnumerable<StockMovement>> GetAllAsync() => _stockMovementRepository.GetAllAsync();
-        public Task<StockMovement?> GetByIdAsync(int id) => _stockMovementRepository.GetByIdAsync(id);
+            
+        public IEnumerable<StockMovement> GetAll()
+        {
+            return _stockMovementRepository.Select();
+        }
+      
     }
 }
