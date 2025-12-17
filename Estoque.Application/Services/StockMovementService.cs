@@ -19,7 +19,7 @@ namespace Estoque.Application.Services
         public void RegisterMovement(StockMovement movement)
         {
             var validationResult = _validator.Validate(movement);
-            if (validationResult.IsValid)
+            if (!validationResult.IsValid)
             {
                 throw new Exception(validationResult.Errors.FirstOrDefault()?.ErrorMessage);
             }

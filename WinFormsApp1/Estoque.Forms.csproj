@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Estoque.Application\Estoque.Application.csproj" />
+    <ProjectReference Include="..\Estoque.Domain\Estoque.Domain.csproj" />
+    <ProjectReference Include="..\Estoque.Repository\Estoque.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
