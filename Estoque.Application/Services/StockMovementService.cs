@@ -8,7 +8,7 @@ namespace Estoque.Application.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly IStockMovementRepository _stockMovementRepository;
-        private readonly StockMovementValidator _validator;
+        private readonly IValidator<StockMovement> _validator;
         public StockMovementService(IProductRepository productRepository, IStockMovementRepository stockMovementRepository, IValidator<StockMovement> validator)
         {
             _productRepository = productRepository;

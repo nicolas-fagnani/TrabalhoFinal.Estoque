@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Estoque.Application.Validators;
 using Estoque.Domain.Entities;
 using Estoque.Domain.Interfaces;
+using FluentValidation;
 
 namespace Estoque.Application.Services
 {
@@ -20,7 +21,7 @@ namespace Estoque.Application.Services
             _validator = validator;
         }
 
-        public void Register(SupplierValidator supplier)
+        public void Register(Supplier supplier)
         {
             var validationResult = _validator.Validate(supplier);
             if (!validationResult.IsValid)

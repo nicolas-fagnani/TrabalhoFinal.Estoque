@@ -9,7 +9,7 @@ using FluentValidation;
 
 namespace Estoque.Application.Services
 {
-    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : IBaseEntity
+    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity<int>
     {
         private readonly IBaseRepository<TEntity> _baseRepository;
         private readonly IMapper _mapper;
@@ -74,7 +74,7 @@ namespace Estoque.Application.Services
 
         public void Delete(int id)
         {
-            _baseRepository.CleanChageTracker();
+            _baseRepository.CleanChangeTracker();
             _baseRepository.Delete(id);
         }
 

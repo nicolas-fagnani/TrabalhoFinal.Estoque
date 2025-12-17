@@ -28,7 +28,11 @@ namespace WinFormsApp1
             var customerValidator = new CustomerValidator();
             var stockValidator = new StockMovementValidator();
 
-            var userService = new UserService(userRepo);
+            var userService = new UserService(userRepo, userValidator);
+            var categoryService = new CategoryService(categoryRepo, categoryValidator);
+            var supplierService = new SupplierService(supplierRepo, supplierValidator);
+            var stockService = new StockMovementService(productRepo, stockRepo, stockValidator);
+
 
             Application.Run(new FormLogin(userService));
         }

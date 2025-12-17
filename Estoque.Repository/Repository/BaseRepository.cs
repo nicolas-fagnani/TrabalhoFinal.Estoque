@@ -11,15 +11,19 @@ namespace Estoque.Repository.Repository
             context.Attach(obj);
         }
 
-        public void CleanChageTracker()
+        public void CleanChangeTracker()
         {
             context.ChangeTracker.Clear();
         }
 
         public void Delete(object id)
         {
-            context.Set<TEntity>().Remove((TEntity)id);
-            context.SaveChanges();
+            var entity = Select(id);
+            if(entity != null)
+            {
+                context.Set<TEntity>().Remove(entity);
+                context.SaveChanges();
+            }
         }
 
         public void Insert(TEntity entity)

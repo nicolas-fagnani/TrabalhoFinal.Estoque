@@ -120,7 +120,8 @@
             btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnLogin.Size = new Size(211, 39);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "LOGIN";           
+            btnLogin.Text = "LOGIN";
+            btnLogin.Click += btnLogin_Click;
             // 
             // lblUsername
             // 
@@ -183,6 +184,7 @@
             lblSingUp.Size = new Size(48, 17);
             lblSingUp.TabIndex = 8;
             lblSingUp.Text = "Sing-Up";
+            lblSingUp.Click += lblSingUp_Click;
             // 
             // guna2PictureBox1
             // 

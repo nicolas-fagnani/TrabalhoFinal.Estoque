@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Estoque.Domain.Entities;
+using Estoque.Domain.Interfaces;
 using Estoque.Repository.Context;
 
 namespace Estoque.Repository.Repository

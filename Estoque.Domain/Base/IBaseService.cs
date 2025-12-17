@@ -2,7 +2,7 @@
 
 namespace Estoque.Domain.Base
 {
-    public interface IBaseService<TEntity> where TEntity : IBaseEntity
+    public interface IBaseService<TEntity> where TEntity : BaseEntity<int>
     {
         void AttachObject(object obj);
         TOutputModel Add<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)

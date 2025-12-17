@@ -8,7 +8,7 @@ using Estoque.Domain.Entities;
 
 namespace Estoque.Domain.Interfaces
 {
-    public interface ICostumerRepository : IBaseRepository<Customer>
+    public interface ICustomerRepository : IBaseRepository<Customer>
     {
         Customer? GetByCpf(string cpf);
 
